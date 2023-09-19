@@ -1,10 +1,41 @@
 .App {
   text-align: center;
 }
-
+::-webkit-scrollbar {
+    /* width: 10px; */
+    /* background: transparent; */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.horizontal {
+  overflow-x:'hidden'
+}
+
+.hero-banner-images {
+  position:absolute;
+  right:40px;
+  top:0px;
+  width: 700px;
+  height: 900px;
+  margin-top:-330px;
+  /* z-index:-999; */
+}
+
+.detail-image {
+  width:1000px;
+}
+
+@media only screen and (max-width: 800px) {
+  .hero-banner-images {
+     display:none;
+  }
+
+  .detail-image {
+    width:100%;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +66,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.react-horizontal-scrolling-menu--scroll-container{
+  display: flex;
+  overflow: hidden;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper{
+  display: flex;
+
 }
