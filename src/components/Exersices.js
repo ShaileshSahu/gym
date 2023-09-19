@@ -16,7 +16,7 @@ const Exersices = ({excercise,bodyPart,setExcercise}) => {
   const currentExercise = excercise.slice(indexOfFirst, indexOfLast);
 
   useEffect(()=>{
-    const fetchExercise = async() => {
+    const fetchExercise = async () => {
       let exerciseList = [];
       if(bodyPart === "all") {
         exerciseList = await fetchData('https://exercisedb.p.rapidapi.com/exercises', excerciseOptions);
@@ -26,7 +26,7 @@ const Exersices = ({excercise,bodyPart,setExcercise}) => {
       setExcercise(exerciseList);
     }
     fetchExercise();
-  },[excercise]);
+  },[bodyPart,setExcercise]);
   return (
     <Box id="excercise"
       sx={{mt:{lg:'30px'}}}
