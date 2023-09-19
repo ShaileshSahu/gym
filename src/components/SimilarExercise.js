@@ -1,7 +1,7 @@
 import React from 'react'
 import {Box,Stack,Typography} from '@mui/material';
-import HorizontalBar from './HorizontalBar';
-import Loader from './Loader';
+// import HorizontalBar from './HorizontalBar';
+// import Loader from './Loader';
 const SimilarExercise = ({targetExercise,equimentExercise}) => {
   return (
     <Box>

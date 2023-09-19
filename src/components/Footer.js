@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Stack, Typography} from '@mui/material';
+import {Box, Stack} from '@mui/material';
 const Footer = () => {
   return (
     <Box mt="80px" style={{background:"rgb(255 193 7 / 9%)"}}>

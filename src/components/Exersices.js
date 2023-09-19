@@ -4,7 +4,7 @@ import {Box,Stack,Typography} from '@mui/material';
 import {excerciseOptions,fetchData} from '../utils/fetchData';
 import Exercise from './Exercise';
 import Loader from './Loader';
-const Exersices = ({excercise,bodyPart,setExcercise,setBodyPart}) => {
+const Exersices = ({excercise,bodyPart,setExcercise}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const exercisePerPage = 10;
   const paginate = (e,value) => {
@@ -16,17 +16,17 @@ const Exersices = ({excercise,bodyPart,setExcercise,setBodyPart}) => {
   const currentExercise = excercise.slice(indexOfFirst, indexOfLast);
 
   useEffect(()=>{
-    let exerciseList = [];
-    async function fetch(){
-      if(bodyPart == "all") {
+    const fetchExercise = async() => {
+      let exerciseList = [];
+      if(bodyPart === "all") {
         exerciseList = await fetchData('https://exercisedb.p.rapidapi.com/exercises', excerciseOptions);
       } else {
         exerciseList = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, excerciseOptions);
       }
       setExcercise(exerciseList);
     }
-    fetch();
-  },[bodyPart]);
+    fetchExercise();
+  },[excercise]);
   return (
     <Box id="excercise"
       sx={{mt:{lg:'30px'}}}
